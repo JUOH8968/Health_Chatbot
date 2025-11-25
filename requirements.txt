@@ -12,3 +12,4 @@ numpy
 
 scikit-learn
 sentence-transformers
+accelerate
