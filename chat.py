@@ -10,7 +10,7 @@ from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-
+import shutil # shutil 모듈을 임포트해야 합니다 (코드 상단에 추가 필요)
 import os
 
 # ----------------------------------------------------
@@ -95,7 +95,6 @@ def load_rag_pipeline():
         final_pkl_path = os.path.join(VECTOR_DB_LOCAL_PATH, "index.pkl")
         
         # 파일을 최종 위치로 이동
-        import shutil # shutil 모듈을 임포트해야 합니다 (코드 상단에 추가 필요)
         shutil.copy(downloaded_faiss_path, final_faiss_path)
         shutil.copy(downloaded_pkl_path, final_pkl_path)
 
