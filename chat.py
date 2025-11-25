@@ -22,9 +22,10 @@ HF_REPO_ID = "ju03/Healthcare_knowledge_chatbot"
 VECTOR_DB_LOCAL_PATH = os.path.join(os.getcwd(), "vector_db")
 
 # ✅ 수정: LLM 모델은 공개된 KoAlpaca 모델 ID로 지정하여 로딩 문제를 해결합니다.
-LLM_MODEL_PATH = "klyang/koT5-small-text-generation" 
+LLM_MODEL_PATH = "paust/pkoT5-small" 
 # Beomi/KoAlpaca-Polyglot-12.8B
-
+# paust/pkoT5-small
+# klyang/koT5-small-text-generation
 
 EMBEDDING_MODEL_PATH = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 
