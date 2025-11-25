@@ -25,6 +25,13 @@ VECTOR_DB_LOCAL_PATH = os.path.join(os.getcwd(), "vector_db")
 LLM_MODEL_PATH = "Beomi/KoAlpaca-Polyglot-12.8B" 
 
 EMBEDDING_MODEL_PATH = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+
+# ... (LLM_MODEL_PATH 등 다른 전역 변수들)
+# ✅ FAISS 파일명 전역 변수 정의
+faiss_filename_in_repo = "vector_db/index.faiss" 
+pkl_filename_in_repo = "vector_db/index.pkl"
+
+
 # ----------------------------------------------------
 
 
@@ -65,6 +72,7 @@ def load_rag_pipeline():
     llm_obj = None
     retriever = None
     embeddings = None
+    status = None
 
     # status = st.status("**:gear: RAG 챗봇 구성 요소를 로드 중입니다...**", expanded=True)
 
@@ -72,11 +80,6 @@ def load_rag_pipeline():
         # 1. FAISS Vector DB 파일 다운로드 및 준비
 
         os.makedirs(VECTOR_DB_LOCAL_PATH, exist_ok=True)
-
-        faiss_filename_in_repo = "vector_db/index.faiss"
-  
-        pkl_filename_in_repo = "vector_db/index.pkl"
-
 
         # index.faiss와 index.pkl 다운로드
         downloaded_faiss_path = hf_hub_download(
