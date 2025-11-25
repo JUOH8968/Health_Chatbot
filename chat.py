@@ -168,7 +168,10 @@ def load_rag_pipeline():
         return qa_chain, retriever, embeddings
 
     except Exception as e:
-        status.error(f"❌ **RAG 파이프라인 로드 실패!** 오류 상세: {e}")
+        if status :
+            status.error(f"❌ **RAG 파이프라인 로드 실패!** 오류 상세: {e}")
+        else:
+            st.error(f"❌ **RAG 파이프라인 로드 실패!** 오류 상세: {e}")
         return None, None, None
 
 
