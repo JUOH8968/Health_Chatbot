@@ -9,4 +9,6 @@ faiss-cpu # Chroma 대신 FAISS를 사용한다면
 # 또는
 chromadb # Chroma DB를 사용한다면
 numpy
+
 scikit-learn
+sentence-transformers
